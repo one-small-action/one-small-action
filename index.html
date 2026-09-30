@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Small Action — A Better You</title>
+<meta name="description" content="One Small Action. A Better You. A simple daily system for building a stronger, healthier, more intentional life.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+<div class="logo">ONE SMALL <span>ACTION</span></div>
+<div class="nav-right"><div class="pill hide-sm" id="date"></div><span class="pill hide-sm" id="userEmail" hidden></span><button class="smallbtn" id="authBtn" type="button">Log in</button></div>
+</nav>
+
+<header class="hero">
+<div class="eyebrow">A daily system for human potential</div>
+<h1>Change your life one action at a time.</h1>
+<div class="tagline">One Small Action. A Better You.</div>
+<p>Stop waiting for the perfect moment. Move your body. Sharpen your mind. Keep one promise to yourself today—and do it again tomorrow.</p>
+<div class="hero-actions">
+<button class="btn" id="startDay">Start today's system</button>
+<button class="btn secondary" id="scrollTasks">See today's actions</button>
+</div>
+</header>
+
+<main>
+<div class="grid" id="tasksSection">
+<section class="card">
+<div class="card-head"><div><div class="label">Today's actions</div><h2 class="card-title">Small actions. Real progress.</h2></div><div class="pill" id="progressText">0 / 3</div></div>
+<div class="task-list" id="taskList"></div>
+<form class="add" id="addForm"><input id="newTask" placeholder="Add a personal action…" maxlength="80" aria-label="New task"><button class="smallbtn" type="submit">Add</button></form>
+</section>
+
+<section class="card">
+<div class="label">Focus session</div>
+<div class="timer" id="timer">30:00</div><div class="timer-label">30 minute focused action</div>
+<div class="timer-controls"><button class="btn" id="timerStart">Start</button><button class="smallbtn" id="timerReset">Reset</button></div>
+<div class="label mt-25">Today's progress</div>
+<div class="stat" id="percent">0%</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
+<div class="muted">Consistency beats intensity. Keep taking the next step.</div>
+</section>
+</div>
+
+<section class="card progress-card" id="progressSection">
+<div class="card-head"><div><div class="label">Your progress</div><h2 class="card-title" id="progressHeading">Track every small win.</h2></div></div>
+<div id="progressGuest" class="guest-cta">
+<p class="muted">Right now your actions are saved only in this browser. Create a free account to keep your progress safe, see your streak and use it on any device.</p>
+<button class="btn" id="progressSignup" type="button">Create free account</button>
+</div>
+<div id="progressUser" hidden>
+<div class="stats">
+<div class="stat-tile"><div class="label">Current streak</div><div class="stat" id="streak">0</div><div class="muted" id="streakUnit">days</div></div>
+<div class="stat-tile"><div class="label">Actions completed</div><div class="stat" id="totalDone">0</div><div class="muted">all time</div></div>
+<div class="stat-tile"><div class="label">Focus sessions</div><div class="stat" id="focusCount">0</div><div class="muted">30 minutes each</div></div>
+</div>
+<div class="label mt-25">Last 14 days</div>
+<div class="history" id="history" role="img" aria-label="Actions completed per day over the last 14 days"></div>
+</div>
+</section>
+
+<section class="card">
+<div class="label">The philosophy</div>
+<div class="principle">
+<div class="quote">You don't need to rebuild your entire life today. You just need to make the next choice count.</div>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><div><strong>Choose one.</strong><div class="muted">Pick an action that moves you forward.</div></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Do it fully.</strong><div class="muted">Give the next 30 minutes your attention.</div></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Repeat.</strong><div class="muted">Small wins become a different life.</div></div></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>One Small Action · A Better You.</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<dialog id="authDialog" aria-labelledby="authTitle">
+<form id="authForm" class="auth-form" novalidate>
+<div class="card-head"><h2 class="card-title" id="authTitle">Log in</h2><button class="icon-btn" type="button" id="authClose" aria-label="Close">×</button></div>
+<p class="muted" id="authIntro">Welcome back. Pick up where you left off.</p>
+<label id="nameField" hidden>Name<input id="authName" name="name" autocomplete="name" maxlength="60"></label>
+<label id="emailField">Email<input id="authEmail" name="email" type="email" autocomplete="email" required></label>
+<label id="passwordField">Password<input id="authPassword" name="password" type="password" autocomplete="current-password" minlength="8" required></label>
+<div class="auth-error" id="authError" role="alert" hidden></div>
+<button class="btn" type="submit" id="authSubmit">Log in</button>
+<div class="auth-links">
+<button type="button" class="link" id="authSwitch">New here? Create an account</button>
+<button type="button" class="link" id="authForgot">Forgot password?</button>
+</div>
+</form>
+</dialog>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

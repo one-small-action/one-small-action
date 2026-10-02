@@ -1,0 +1,10 @@
+{
+  "name": "One Small Action — A Better You",
+  "short_name": "One Small Action",
+  "description": "A simple daily system for building a stronger, healthier, more intentional life.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080a0f",
+  "theme_color": "#080a0f",
+  "orientation": "portrait"
